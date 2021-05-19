@@ -2,7 +2,7 @@ import database from '../../Database/connection.js';
 
 async function createComment(comment, id_post, idUserAuth) {
     const conn = await database.connect();
-    const sql = 'INSERT INTO tbl_comentario(comentario, FK_id_post, FK_id_usuario VALUES(?,?,?)';
+    const sql = 'INSERT INTO tbl_comentario(comentario, FK_id_post, FK_id_usuario) VALUES(?,?,?)';
     const dataComment = [comment, id_post, idUserAuth];
     await conn.query(sql, dataComment);
 }
