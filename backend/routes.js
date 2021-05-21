@@ -6,6 +6,7 @@ import postRouter from './Middleware/Posts/postRouter.js';
 import changePassword from './Middleware/Usuario/changePassword.js';
 import commentPosts from './Middleware/Comentarios/comentarioRouter.js';
 import statistics from './Middleware/Statistic/StatisticRouter.js';
+import photo from './Middleware/Photos/photoRouter.js';
 
 const router = express.Router();
 
@@ -16,5 +17,6 @@ router.use('/post', verifyJWT, postRouter);
 router.use('/reset', changePassword);
 router.use('/comments', verifyJWT, commentPosts);
 router.use('/statistic', verifyJWT, statistics);
+router.use('/photo', photo);
 
 export default router;
